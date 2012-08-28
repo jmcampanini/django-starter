@@ -3,6 +3,7 @@ django-starter
 
 A starting template for a heroku-compatible Django project.
 
+
 ## Key Capabilities
 - `gunicorn` setup in Procfile.
 - `.env` and `.env.sample` template already setup, loaded using `core/planeteer.py`.
@@ -10,9 +11,14 @@ A starting template for a heroku-compatible Django project.
 - Production settings using `django-storages` & Amazon S3 for assets.
 - Testing using `debug-toolbar` and `django-nose`.
 
+
 ## To Begin
-- Update the `SECRET_KEY` variable in the `core/settings.py` file.
-- Remove `core/_delete_me.py` and update the `core/url.py` file.
+1. Setup a virtual environment & install the python dependencies
+	1. `virtualenv [ENVIRONMENT_NAME]`
+	2. `pip install -r requirements`
+2. Update the `SECRET_KEY` variable in the `core/settings.py` file.
+	- A helpful link: [django secret key generator](http://www.miniwebtool.com/django-secret-key-generator/)
+3. Remove `core/_delete_me.py` and update the `core/url.py` file.
 
 
 ## To Deploy to Heroku

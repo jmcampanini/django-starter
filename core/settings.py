@@ -8,7 +8,7 @@ from core.planeteer import load_the_environment
 # #############################################################################
 # Assume we're in the development environment
 CLEAN_ENV = str(environ.get("ENV", "dev")).strip().lower()
-load_the_environment(CLEAN_ENV, True)
+load_the_environment(CLEAN_ENV, False)
 
 
 # #############################################################################
@@ -74,7 +74,7 @@ LANGUAGE_CODE = "en-us"
 USE_I18N = True
 USE_L10N = True
 
-SECRET_KEY = "sth1u802g&amp;(@c*@*njlrj0m2m2sxss-0lrk1hfibj5)j4xk3*i"
+SECRET_KEY = "REPLACE_ME"
 
 
 # #############################################################################
