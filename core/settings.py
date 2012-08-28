@@ -27,6 +27,17 @@ DATABASES = {
 
 
 # #############################################################################
+# EMAIL SETTINGS
+# #############################################################################
+# We assume email servicing will be provided by MAILGUN
+#EMAIL_HOST = os.environ.get("MAILGUN_SMTP_SERVER", "")
+#EMAIL_PORT = os.environ.get("MAILGUN_SMTP_PORT", "")
+#EMAIL_HOST_USER = os.environ.get("MAILGUN_SMTP_LOGIN", "")
+#EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_SMTP_PASSWORD", "")
+#EMAIL_USE_TLS = string_to_bool(os.environ.get("EMAIL_USE_TLS", "True"), default=True)
+
+
+# #############################################################################
 # TEMPLATES, MIDDLEWARE & WSGI
 # #############################################################################
 TEMPLATE_LOADERS = ("django.template.loaders.filesystem.Loader",
@@ -94,5 +105,5 @@ elif CLEAN_ENV == "prod":
 # #############################################################################
 # APP SETTINGS
 # #############################################################################
-try: from settings_app import *
+try: from settings_apps import *
 except ImportError: pass
