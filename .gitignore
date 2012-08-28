@@ -1,0 +1,8 @@
+.idea/
+__static/
+__media/
+.DS_Store
+*.pyc
+*.sqlite
+.env
+.env.dev

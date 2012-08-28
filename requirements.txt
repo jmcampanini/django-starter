@@ -1,0 +1,11 @@
+Django==1.4.1
+boto==2.5.2
+dj-database-url==0.2.1
+django-debug-toolbar==0.9.4
+django-nose==1.1
+django-storages==1.1.5
+gunicorn==0.14.6
+nose==1.1.2
+psycopg2==2.4.5
+sure==1.0.5
+wsgiref==0.1.2
