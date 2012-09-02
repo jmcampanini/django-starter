@@ -33,6 +33,7 @@ A starting template for a heroku-compatible Django project.
 	- jQuery 1.8.0
 	- Font Awesome 2.0
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
+	- [eldarion / bootstrap-ajax](https://github.com/eldarion/bootstrap-ajax)
 
 
 ## To Begin
