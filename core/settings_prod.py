@@ -11,6 +11,16 @@ DEBUG = False
 
 
 # #############################################################################
+# EMAIL SETTINGS
+# #############################################################################
+#EMAIL_HOST = os.environ.get("MAILGUN_SMTP_SERVER", "")
+#EMAIL_PORT = os.environ.get("MAILGUN_SMTP_PORT", "")
+#EMAIL_HOST_USER = os.environ.get("MAILGUN_SMTP_LOGIN", "")
+#EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_SMTP_PASSWORD", "")
+#EMAIL_USE_TLS = string_to_bool(os.environ.get("EMAIL_USE_TLS", "True"), default=True)
+
+
+# #############################################################################
 # AWS S3
 # #############################################################################
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")

@@ -18,6 +18,17 @@ DEBUG_TOOLBAR_CONFIG = {
 
 
 # #############################################################################
+# EMAIL SETTINGS
+# #############################################################################
+# Use a local host: python -m smtpd -n -c DebuggingServer localhost:1025
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+EMAIL_USE_TLS = False
+
+
+# #############################################################################
 # MEDIA & STATIC & TEMPLATES & MIDDLEWARE
 # #############################################################################
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, "__media/")
