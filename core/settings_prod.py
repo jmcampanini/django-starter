@@ -21,6 +21,17 @@ DEBUG = False
 
 
 # #############################################################################
+# CACHE SETTINGS
+# #############################################################################
+CACHES = {
+	"default": {
+		"BACKEND": "django.core.cache.backends.memcached.PyLibMCCache",
+		"LOCATION": os.environ.get("MEMCACHIER_SERVERS", "")
+	}
+}
+
+
+# #############################################################################
 # AWS S3
 # #############################################################################
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")

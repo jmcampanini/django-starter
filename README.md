@@ -27,6 +27,7 @@ A starting template for a heroku-compatible Django project.
 	- django-storages
 	- boto
 	- celery
+	- pylibmc
 - HTML/CSS
 	- Bootstrap 2.1.0
 	- jQuery 1.8.0
@@ -94,10 +95,9 @@ Given which environment, the project will do the following:
 	- Heroku Postgres
 	- Mailgun
 	- CloudAMQP
+	- MemCachier
 - Coming Soon:
-	1. MemCachier
-	2. New Relic
-	3. Redis To Go
+	1. New Relic
 	
 
 # External Dependencies
