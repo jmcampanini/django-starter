@@ -26,6 +26,7 @@ A starting template for a heroku-compatible Django project.
 	- psycopg2
 	- django-storages
 	- boto
+	- celery
 - HTML/CSS
 	- Bootstrap 2.1.0
 	- jQuery 1.8.0
@@ -92,11 +93,11 @@ Given which environment, the project will do the following:
 - Currently supported:
 	- Heroku Postgres
 	- Mailgun
+	- CloudAMQP
 - Coming Soon:
-	1. CloudAMQP
-	2. MemCachier
-	3. New Relic
-	4. Redis To Go
+	1. MemCachier
+	2. New Relic
+	3. Redis To Go
 	
 
 # External Dependencies

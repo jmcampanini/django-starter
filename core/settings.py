@@ -68,7 +68,8 @@ INSTALLED_APPS = ("django.contrib.auth",
 
 				  "debug_toolbar",
 				  "storages",
-				  "django_nose")
+				  "django_nose",
+				  "djcelery")
 
 
 # #############################################################################
@@ -89,6 +90,13 @@ SECRET_KEY = "REPLACE_ME"
 
 
 # #############################################################################
+# APP SETTINGS
+# #############################################################################
+try: from settings_apps import *
+except ImportError: pass
+
+
+# #############################################################################
 # SETUP ENVIRONMENT, PART 2
 # #############################################################################
 if CLEAN_ENV == "dev":
@@ -100,10 +108,3 @@ elif CLEAN_ENV == "prod":
 	print "PROD Environment"
 	try: from settings_prod import *
 	except ImportError: pass
-
-
-# #############################################################################
-# APP SETTINGS
-# #############################################################################
-try: from settings_apps import *
-except ImportError: pass
