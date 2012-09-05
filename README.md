@@ -39,7 +39,7 @@ A starting template for a heroku-compatible Django project.
 ## To Begin
 1. Setup a virtual environment & install the python dependencies
 	1. `virtualenv [ENVIRONMENT_NAME]`
-	2. `pip install -r requirements`
+	2. `pip install -r requirements.txt`
 2. Update the `SECRET_KEY` variable in the `core/settings.py` file - [django secret key generator](http://www.miniwebtool.com/django-secret-key-generator/).
 3. Remove `core/_delete_me.py` and update the `core/url.py` file.
 
@@ -98,7 +98,9 @@ Given which environment, the project will do the following:
 	- CloudAMQP
 	- MemCachier
 - Coming Soon:
-	1. New Relic
+	1. South
+	2. New Relic
+	3. jQuery 1.8.1
 	
 
 # External Dependencies
