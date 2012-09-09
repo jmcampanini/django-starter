@@ -11,12 +11,15 @@ A starting template for a heroku-compatible Django project.
 - Production settings using `django-storages` & Amazon S3 for assets.
 - Testing using `debug-toolbar` and `django-nose`.
 - Email settings using MailGun `ENV` variables (commented out initially).
-
+- Cache settings for development & production
+- Celery configuration using CloudAMQP on heroku, and eager tasks locally (no broker)
+- New Relic setup using Procfile
 
 ## Included Components
 - Python/Django
-	- Django
+	- Django 1.4.1
 	- gunicorn
+	- south
 - Testing
 	- django-debug-toolbar
 	- sure
@@ -28,9 +31,10 @@ A starting template for a heroku-compatible Django project.
 	- boto
 	- celery
 	- pylibmc
+	- New Relic
 - HTML/CSS
-	- Bootstrap 2.1.0
-	- jQuery 1.8.0
+	- Bootstrap 2.1.1
+	- jQuery 1.8.1
 	- Font Awesome 2.0
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 	- [eldarion / bootstrap-ajax](https://github.com/eldarion/bootstrap-ajax)
@@ -48,6 +52,7 @@ A starting template for a heroku-compatible Django project.
 - First-time Deployments:
 	1. Create the application: `heroku create [APP_NAME]`
 	2. Enable ENV variables during compile: `heroku labs:enable user_env_compile`
+	3. Install the Heroku Add Ons you will be using.
 - Updates
 	1. If needed, push up the local `.env` file: `heroku config:push`
 	2. Push the latest version to heroku: `git push heroku master`
@@ -97,11 +102,8 @@ Given which environment, the project will do the following:
 	- Mailgun
 	- CloudAMQP
 	- MemCachier
-- Coming Soon:
-	1. South
-	2. New Relic
-	3. jQuery 1.8.1
-	
+	- New Relic
+
 
 # External Dependencies
 - [Less.app](http://incident57.com/less/)
