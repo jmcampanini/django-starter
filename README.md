@@ -6,6 +6,7 @@ A starting template for a heroku-compatible Django project.
 
 ## Key Capabilities
 - `gunicorn` setup in Procfile.
+- New Relic setup using Procfile
 - `.env` and `.env.sample` template already setup, loaded using `core/planeteer.py`.
 - Uses Database URLs and PostgreSQL in production, and `sqlite` in development.
 - Production settings using `django-storages` & Amazon S3 for assets.
@@ -13,7 +14,7 @@ A starting template for a heroku-compatible Django project.
 - Email settings using MailGun `ENV` variables (commented out initially).
 - Cache settings for development & production
 - Celery configuration using CloudAMQP on heroku, and eager tasks locally (no broker)
-- New Relic setup using Procfile
+- South included for database migrations
 
 ## Included Components
 - Python/Django
@@ -103,6 +104,11 @@ Given which environment, the project will do the following:
 	- CloudAMQP
 	- MemCachier
 	- New Relic
+
+
+## Road Map
+1. Staging Environment
+2. TBD
 
 
 # External Dependencies
