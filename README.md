@@ -32,7 +32,7 @@ A starting template for a heroku-compatible Django project.
 	- boto
 	- celery
 	- pylibmc
-	- newrelic
+	- New Relic
 - HTML/CSS
 	- Bootstrap 2.1.1
 	- jQuery 1.8.1
