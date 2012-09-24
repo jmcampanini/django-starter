@@ -35,7 +35,7 @@ A starting template for a heroku-compatible Django project.
 	- New Relic
 - HTML/CSS
 	- Bootstrap 2.1.1
-	- jQuery 1.8.1
+	- jQuery 1.8.2
 	- Font Awesome 2.0
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 	- [eldarion / bootstrap-ajax](https://github.com/eldarion/bootstrap-ajax)
