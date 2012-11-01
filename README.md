@@ -5,10 +5,9 @@ A starting template for a heroku-compatible Django project.
 
 
 ## Key Capabilities
-- `gunicorn` setup in Procfile.
-- New Relic setup using Procfile
-- `.env` and `.env.sample` template already setup, loaded using `core/planeteer.py`.
-- Uses Database URLs and PostgreSQL in production, and `sqlite` in development.
+- Procfile ready for Heroku deployment
+- Environments using `.env` files. See `.env.sample` template to get started.
+- Uses Database URLs and Heroku PostgreSQL in production, and `sqlite` in development.
 - Production settings using `django-storages` & Amazon S3 for assets.
 - Testing using `debug-toolbar` and `django-nose`.
 - Email settings using MailGun `ENV` variables (commented out initially).
@@ -18,7 +17,7 @@ A starting template for a heroku-compatible Django project.
 
 ## Included Components
 - Python/Django
-	- Django 1.4.1
+	- Django 1.4.2
 	- gunicorn
 	- south
 - Testing
@@ -34,7 +33,7 @@ A starting template for a heroku-compatible Django project.
 	- pylibmc
 	- New Relic
 - HTML/CSS
-	- Bootstrap 2.1.1
+	- Bootstrap 2.2.1
 	- jQuery 1.8.2
 	- Font Awesome 2.0
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
@@ -106,10 +105,14 @@ Given which environment, the project will do the following:
 	- New Relic
 
 
-## Road Map
-1. Staging Environment
-2. TBD
+## Upcoming Features
+- Multiple Environments (Staging, Clones)
+- Heroku Automation
+- Pre-Deployment Asset Processing
+- Deployment Automation
+- CDN Support
 
 
 # External Dependencies
-- [Less.app](http://incident57.com/less/)
+- Less Compiler
+	- Mac OS X - [Less.app](http://incident57.com/less/)

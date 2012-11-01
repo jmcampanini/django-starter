@@ -9,6 +9,7 @@ dj-database-url
 django-celery
 django-debug-toolbar
 django-nose
+django-pylibmc-sasl
 django-social-auth
 django-storages
 gunicorn

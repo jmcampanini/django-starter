@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, timedelta
 
 
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
@@ -23,10 +24,16 @@ DEBUG = False
 # #############################################################################
 # CACHE SETTINGS
 # #############################################################################
+os.environ["MEMCACHE_SERVERS"] = os.environ.get("MEMCACHIER_SERVERS", "")
+os.environ["MEMCACHE_USERNAME"] = os.environ.get("MEMCACHIER_USERNAME", "")
+os.environ["MEMCACHE_PASSWORD"] = os.environ.get("MEMCACHIER_PASSWORD", "")
+
 CACHES = {
 	"default": {
-		"BACKEND": "django.core.cache.backends.memcached.PyLibMCCache",
-		"LOCATION": os.environ.get("MEMCACHIER_SERVERS", "")
+		"BACKEND": "django_pylibmc.memcached.PyLibMCCache",
+		"LOCATION": os.environ.get("MEMCACHIER_SERVERS", ""),
+		"TIMEOUT": 500,
+		"BINARY": True
 	}
 }
 
@@ -38,6 +45,13 @@ AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET")
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_BUCKET")
 AWS_S3_SECURE_URLS = False
+AWS_QUERYSTRING_AUTH = False
+
+future = datetime.now() + timedelta(days=10)
+AWS_HEADERS = {
+	"Expires": future.strftime("%a, %d %b %Y %H:%M:%S GMT"),
+	"Cache-Control": "max-age=86400, public"
+}
 
 
 # #############################################################################
