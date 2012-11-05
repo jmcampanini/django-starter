@@ -4,12 +4,12 @@ from django.shortcuts import render_to_response
 
 
 def demo_view(request):
-	return render_to_response("base.html", {})
+	return render_to_response("sample.html", {})
 
 
 def demo_ajax(request, num):
 	data = {
-		"html": "<li>From Server: %s" % num
+	"html": "<li>From Server: %s" % num
 	}
 	jsond = json.dumps(data)
 	return HttpResponse(jsond, mimetype="application/json")
