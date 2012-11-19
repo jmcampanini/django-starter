@@ -1,23 +1,52 @@
+# #########################################
+# Django Specific Packages
+# #########################################
 Django
-South
-amqplib
-anyjson
-billiard
+gunicorn
+wsgiref
+
+
+# #########################################
+# Static File Storage using AWS S3
+# #########################################
+django-storages
 boto
-celery
+
+
+# #########################################
+# Database Functionality
+# #########################################
+psycopg2
 dj-database-url
+South
+
+
+# #########################################
+# Celery
+# #########################################
+celery
 django-celery
+kombu
+
+
+# #########################################
+# Debugging Functionality
+# #########################################
+newrelic
 django-debug-toolbar
 django-nose
-django-pylibmc-sasl
-django-social-auth
-django-storages
-gunicorn
-kombu
-newrelic
 nose
-psycopg2
-pylibmc
-python-dateutil
 sure
-wsgiref
+
+
+# #########################################
+# Social Authentication
+# #########################################
+django-social-auth
+
+
+# #########################################
+# Memcache Functionality
+# #########################################
+pylibmc
+django-pylibmc-sasl
