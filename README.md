@@ -17,7 +17,7 @@ A starting template for a heroku-compatible Django project.
 
 ## Included Components
 - Python/Django
-	- Django 1.4.2
+	- Django
 	- gunicorn
 	- south
 - Testing
@@ -33,9 +33,9 @@ A starting template for a heroku-compatible Django project.
 	- pylibmc
 	- New Relic
 - HTML/CSS
-	- Bootstrap 2.2.1
-	- jQuery 1.8.2
-	- Font Awesome 2.0
+	- Bootstrap 2.2.2
+	- jQuery 1.8.3
+	- Font Awesome 3.0.0
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 	- [eldarion / bootstrap-ajax](https://github.com/eldarion/bootstrap-ajax)
 
@@ -70,6 +70,7 @@ A starting template for a heroku-compatible Django project.
 		- `js` - jquery and bootstrap plug-ins.
 		- `less` - assets for Bootstrap.
 	- `_templates/` - primary template directory
+	- `_vendor/` - contains vendor-specific README, license information, etc.
 	- `core/` - project directory
 		- `settings.py` - common settings. loads other settings files.
 		- `settings_apps.py` - specific settings for applications (i.e., celery, etc.).

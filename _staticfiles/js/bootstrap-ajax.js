@@ -1,5 +1,5 @@
 /* ====================================================================
- * bootstrap-ajax.js v0.1.0
+ * bootstrap-ajax.js v0.4.0
  * ====================================================================
  * Copyright (c) 2012, Eldarion, Inc.
  * All rights reserved.
@@ -60,6 +60,9 @@
         },
         500: function() {
           processError($this)
+        },
+        404: function() {
+          processError($this)
         }
       }
     })
@@ -70,9 +73,10 @@
       , url = $this.attr('action')
       , method = $this.attr('method')
       , data = $this.serialize()
-     
-    $this.find("input[type=submit],button[type=submit]").attr("disabled", "disabled")
-     
+      , button = $this.find('input[type=submit],button[type=submit]')
+    
+    button.attr('disabled', 'disabled')
+    
     spin($this)
     
     e.preventDefault()
@@ -83,11 +87,18 @@
       data: data,
       statusCode: {
         200: function(data) {
+            $this.find('input[type=text],textarea').val('')
             processData(data, $this)
         },
         500: function() {
             processError($this)
+        },
+        404: function() {
+            processError($this)
         }
+      },
+      complete: function() {
+        button.removeAttr('disabled')
       }
     })
   }
@@ -151,6 +162,7 @@
       var replace_selector = $el.attr('data-replace')
         , replace_closest_selector = $el.attr('data-replace-closest')
         , append_selector = $el.attr('data-append')
+        , prepend_selector = $el.attr('data-prepend')
         , refresh_selector = $el.attr('data-refresh')
         , refresh_closest_selector = $el.attr('data-refresh-closest')
       
@@ -162,6 +174,9 @@
       }
       if (append_selector) {
         $(append_selector).append(data.html)
+      }
+      if (prepend_selector) {
+        $(prepend_selector).prepend(data.html)
       }
       if (refresh_selector) {
         $.each($(refresh_selector), function(index, value) {
@@ -178,6 +193,17 @@
         })
       }
     }
+    
+    if (data.fragments) {
+      for (var s in data.fragments) {
+        $(s).replaceWith(data.fragments[s])
+      }
+    }
+    if (data['inner-fragments']) {
+      for (var i in data['inner-fragments']) {
+        $(i).html(data['inner-fragments'][i])
+      }
+    }
   }
   
   function processError($el) {
@@ -185,6 +211,7 @@
       , replace_selector = $el.attr('data-replace')
       , replace_closest_selector = $el.attr('data-replace-closest')
       , append_selector = $el.attr('data-append')
+      , prepend_selector = $el.attr('data-prepend')
     
     if (replace_selector) {
       $(replace_selector).replaceWith(msg)
@@ -194,6 +221,9 @@
     }
     if (append_selector) {
       $(append_selector).append(msg)
+    }
+    if (prepend_selector) {
+      $(prepend_selector).prepend(msg)
     }
   }
 
