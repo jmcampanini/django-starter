@@ -22,22 +22,24 @@ TEMPLATE_DEBUG = DEBUG
 # DATABASE SETTINGS
 # #############################################################################
 DATABASES = {
-	"default": dj_database_url.config(default="sqlite:///db.sqlite")
+    "default": dj_database_url.config(default="sqlite:///db.sqlite")
 }
 
 
 # #############################################################################
 # TEMPLATES, MIDDLEWARE & WSGI
 # #############################################################################
-TEMPLATE_LOADERS = ("django.template.loaders.filesystem.Loader",
-					"django.template.loaders.app_directories.Loader")
+TEMPLATE_LOADERS = (
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader")
 
-MIDDLEWARE_CLASSES = ("django.middleware.gzip.GZipMiddleware",
-					  "django.middleware.common.CommonMiddleware",
-					  "django.contrib.sessions.middleware.SessionMiddleware",
-					  "django.middleware.csrf.CsrfViewMiddleware",
-					  "django.contrib.auth.middleware.AuthenticationMiddleware",
-					  "django.contrib.messages.middleware.MessageMiddleware")
+MIDDLEWARE_CLASSES = (
+    "django.middleware.gzip.GZipMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware")
 
 ROOT_URLCONF = "core.urls"
 
@@ -47,19 +49,20 @@ WSGI_APPLICATION = "core.wsgi.application"
 # #############################################################################
 # APPS
 # #############################################################################
-INSTALLED_APPS = ("django.contrib.auth",
-				  "django.contrib.contenttypes",
-				  "django.contrib.sessions",
-				  "django.contrib.sites",
-				  "django.contrib.messages",
-				  "django.contrib.staticfiles",
-				  "django.contrib.admin",
-				  "django.contrib.admindocs",
+INSTALLED_APPS = (
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.sites",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.admin",
+    "django.contrib.admindocs",
 
-				  "debug_toolbar",
-				  "storages",
-				  "django_nose",
-				  "djcelery")
+    "debug_toolbar",
+    "storages",
+    "django_nose",
+    "djcelery")
 
 
 # #############################################################################
@@ -82,19 +85,25 @@ SECRET_KEY = "REPLACE_ME"
 # #############################################################################
 # APP SETTINGS
 # #############################################################################
-try: from settings_apps import *
-except ImportError: pass
+try:
+    from settings_apps import *
+except ImportError:
+    pass
 
 
 # #############################################################################
 # SETUP ENVIRONMENT, PART 2
 # #############################################################################
 if CLEAN_ENV == "dev":
-	print "DEV Environment"
-	try: from settings_dev import *
-	except ImportError: pass
+    print "DEV Environment"
+    try:
+        from settings_dev import *
+    except ImportError:
+        pass
 
 elif CLEAN_ENV == "prod":
-	print "PROD Environment"
-	try: from settings_prod import *
-	except ImportError: pass
+    print "PROD Environment"
+    try:
+        from settings_prod import *
+    except ImportError:
+        pass
