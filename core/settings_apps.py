@@ -1,10 +1,10 @@
 import os
+import djcelery
 
 
 # #############################################################################
 # CELERY
 # #############################################################################
-import djcelery
 djcelery.setup_loader()
 
 BROKER_URL = os.environ.get("CLOUDAMQP_URL", "")

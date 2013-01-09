@@ -18,7 +18,8 @@ DEBUG = False
 #EMAIL_PORT = os.environ.get("MAILGUN_SMTP_PORT", "")
 #EMAIL_HOST_USER = os.environ.get("MAILGUN_SMTP_LOGIN", "")
 #EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_SMTP_PASSWORD", "")
-#EMAIL_USE_TLS = string_to_bool(os.environ.get("EMAIL_USE_TLS", "True"), default=True)
+#EMAIL_USE_TLS = string_to_bool(os.environ.get("EMAIL_USE_TLS", "True"),
+#                               default=True)
 
 
 # #############################################################################
@@ -29,12 +30,12 @@ os.environ["MEMCACHE_USERNAME"] = os.environ.get("MEMCACHIER_USERNAME", "")
 os.environ["MEMCACHE_PASSWORD"] = os.environ.get("MEMCACHIER_PASSWORD", "")
 
 CACHES = {
-	"default": {
-		"BACKEND": "django_pylibmc.memcached.PyLibMCCache",
-		"LOCATION": os.environ.get("MEMCACHIER_SERVERS", ""),
-		"TIMEOUT": 500,
-		"BINARY": True
-	}
+    "default": {
+        "BACKEND": "django_pylibmc.memcached.PyLibMCCache",
+        "LOCATION": os.environ.get("MEMCACHIER_SERVERS", ""),
+        "TIMEOUT": 500,
+        "BINARY": True
+    }
 }
 
 
@@ -49,8 +50,8 @@ AWS_QUERYSTRING_AUTH = False
 
 future = datetime.now() + timedelta(days=10)
 AWS_HEADERS = {
-	"Expires": future.strftime("%a, %d %b %Y %H:%M:%S GMT"),
-	"Cache-Control": "max-age=86400, public"
+    "Expires": future.strftime("%a, %d %b %Y %H:%M:%S GMT"),
+    "Cache-Control": "max-age=86400, public"
 }
 
 
@@ -67,8 +68,9 @@ STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "_staticfiles/"),)
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 STATICFILES_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
-STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
-					   "django.contrib.staticfiles.finders.AppDirectoriesFinder")
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder")
 
 TEMPLATE_DIRS = ("_templates/",)
 
@@ -76,31 +78,38 @@ TEMPLATE_DIRS = ("_templates/",)
 # #############################################################################
 # LOGGING
 # #############################################################################
+verbose_format = "%(levelname)s " +\
+                 "%(asctime)s " +\
+                 "%(module)s " +\
+                 "%(process)d " +\
+                 "%(thread)d " +\
+                 "%(message)s"
+
 LOGGING = {
-	"version": 1,
-	"disable_existing_loggers": False,
-	"formatters": {
-		"verbose": {
-			"format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
-		}
-	},
-	"filters": {
-		"require_debug_false": {
-			"()": "django.utils.log.RequireDebugFalse"
-		}
-	},
-	"handlers": {
-		"console": {
-			"level": "DEBUG",
-			"class": "logging.StreamHandler",
-			"formatter": "verbose"
-		}
-	},
-	"loggers": {
-		"django.request": {
-			"handlers": ["console"],
-			"level": "ERROR",
-			"propagate": True
-		}
-	}
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": verbose_format
+        }
+    },
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse"
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose"
+        }
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": True
+        }
+    }
 }

@@ -4,12 +4,19 @@ from django.shortcuts import render_to_response
 
 
 def demo_view(request):
-	return render_to_response("sample.html", {})
+    """
+    Shows the `sample.html` template to the browser
+    """
+    return render_to_response("sample.html", {})
 
 
 def demo_ajax(request, num):
-	data = {
-	"html": "<li>From Server: %s" % num
-	}
-	jsond = json.dumps(data)
-	return HttpResponse(jsond, mimetype="application/json")
+    """
+    Called by the `bootstrap-ajax` plugin.
+    """
+    html = "<li>From Server: %s" % num
+    data = {
+        "html": html
+    }
+    jsond = json.dumps(data)
+    return HttpResponse(jsond, mimetype="application/json")

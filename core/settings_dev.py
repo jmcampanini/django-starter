@@ -13,7 +13,7 @@ DEBUG = True
 INTERNAL_IPS = ("127.0.0.1",)
 
 DEBUG_TOOLBAR_CONFIG = {
-	"INTERCEPT_REDIRECTS": False
+    "INTERCEPT_REDIRECTS": False
 }
 
 
@@ -32,9 +32,9 @@ EMAIL_USE_TLS = False
 # CACHE SETTINGS
 # #############################################################################
 CACHES = {
-	"default": {
-		"BACKEND": "django.core.cache.backends.dummy.DummyCache"
-	}
+    "default": {
+        "BACKEND": "django.core.cache.backends.dummy.DummyCache"
+    }
 }
 
 
@@ -51,49 +51,58 @@ STATICFILES_DIRS = (os.path.join(PROJECT_ROOT, "_staticfiles/"),)
 DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",
-					   "django.contrib.staticfiles.finders.AppDirectoriesFinder")
+STATICFILES_FINDERS = (
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder")
 
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "_templates/"),)
 
-MIDDLEWARE_CLASSES = MWC + ("debug_toolbar.middleware.DebugToolbarMiddleware",)
+MIDDLEWARE_CLASSES = MWC + (
+    "debug_toolbar.middleware.DebugToolbarMiddleware",)
 
 
 # #############################################################################
 # LOGGING
 # #############################################################################
+verbose_format = "%(levelname)s " +\
+                 "%(asctime)s " +\
+                 "%(module)s " +\
+                 "%(process)d " +\
+                 "%(thread)d " +\
+                 "%(message)s"
+
 LOGGING = {
-	"version": 1,
-	"disable_existing_loggers": False,
-	"formatters": {
-		"verbose": {
-			"format": "%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
-		}
-	},
-	"filters": {
-		"require_debug_false": {
-			"()": "django.utils.log.RequireDebugFalse"
-		}
-	},
-	"handlers": {
-		"console": {
-			"level": "DEBUG",
-			"class": "logging.StreamHandler",
-			"formatter": "verbose"
-		}
-	},
-	"loggers": {
-		"django.request": {
-			"handlers": ["console"],
-			"level": "ERROR",
-			"propagate": True
-		},
-		#		"django.db.backends": {
-		#			"handlers": ["console"],
-		#			"level": "DEBUG",
-		#			"propagate": True
-		#		}
-	}
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": verbose_format
+        }
+    },
+    "filters": {
+        "require_debug_false": {
+            "()": "django.utils.log.RequireDebugFalse"
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose"
+        }
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": True
+        },
+        #        "django.db.backends": {
+        #            "handlers": ["console"],
+        #            "level": "DEBUG",
+        #            "propagate": True
+        #        }
+    }
 }
 
 

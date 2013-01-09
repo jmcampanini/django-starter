@@ -14,12 +14,14 @@ A starting template for a heroku-compatible Django project.
 - Cache settings for development & production
 - Celery configuration using CloudAMQP on heroku, and eager tasks locally (no broker)
 - South included for database migrations
+- PEP8 Support
 
 ## Included Components
 - Python/Django
 	- Django
 	- gunicorn
 	- south
+	- PEP8
 - Testing
 	- django-debug-toolbar
 	- sure
