@@ -1,5 +1,6 @@
 # 0.2
 - bugfix: heroku labs - user-env-compile updated
+- `.brew` file added with required brew packages
 
 
 # 0.1.1

@@ -116,6 +116,6 @@ Given which environment, the project will do the following:
 - CDN Support
 
 
-# External Dependencies
-- Less Compiler
-	- Mac OS X - [Less.app](http://incident57.com/less/)
+# External Dependencies (optional)
+- Homebrew - see `.brew` file for packages
+- Less Compiler - Mac OS X - [Less.app](http://incident57.com/less/)
