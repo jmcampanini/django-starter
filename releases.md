@@ -7,6 +7,7 @@
 - upgraded jquery to 1.9.0
 - upgraded font awesome to 3.0.2
 - upgraded bootstrap-datepicker
+- upgraded boostrap-ajax
 
 
 # 0.1.1
