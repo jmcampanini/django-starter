@@ -55,6 +55,8 @@ A starting template for a heroku-compatible Django project.
 	1. Create the application: `heroku create [APP_NAME]`
 	2. Enable ENV variables during compile: `heroku labs:enable user-env-compile`
 	3. Install the Heroku Add Ons you will be using.
+	4. Setup AWS S3 Account and set variables in `.env.prod` and on heroku.
+	5. Setup CORS access to AWS S3 Bucket to allow proper font rendering in Firefox & IE.
 - Updates
 	1. If needed, push up the local `.env` file: `heroku config:push`
 	2. Push the latest version to heroku: `git push heroku master`
