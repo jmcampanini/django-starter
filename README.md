@@ -53,7 +53,7 @@ A starting template for a heroku-compatible Django project.
 ## To Deploy to Heroku
 - First-time Deployments:
 	1. Create the application: `heroku create [APP_NAME]`
-	2. Enable ENV variables during compile: `heroku labs:enable user_env_compile`
+	2. Enable ENV variables during compile: `heroku labs:enable user-env-compile`
 	3. Install the Heroku Add Ons you will be using.
 - Updates
 	1. If needed, push up the local `.env` file: `heroku config:push`

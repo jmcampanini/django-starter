@@ -1,3 +1,7 @@
+# 0.2
+- bugfix: heroku labs - user-env-compile updated
+
+
 # 0.1.1
 - PEP8 Support
 
