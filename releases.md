@@ -1,6 +1,7 @@
 # 0.2
 - bugfix: heroku labs - user-env-compile updated
 - `.brew` file added with required brew packages
+- serving MEDIA on DEVELOPMENT environment using `/media/*`
 
 
 # 0.1.1
