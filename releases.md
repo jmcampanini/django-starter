@@ -3,6 +3,7 @@
 - `.brew` file added with required brew packages
 - serving MEDIA on DEVELOPMENT environment using `/media/*`
 - added `favicon.ico`
+- added license information
 
 
 # 0.1.1
