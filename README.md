@@ -36,8 +36,8 @@ A starting template for a heroku-compatible Django project.
 	- New Relic
 - HTML/CSS
 	- Bootstrap 2.2.2
-	- jQuery 1.8.3
-	- Font Awesome 3.0.0
+	- jQuery 1.9.0
+	- Font Awesome 3.0.2
 	- [eternicode / bootstrap-datepicker](https://github.com/eternicode/bootstrap-datepicker)
 	- [eldarion / bootstrap-ajax](https://github.com/eldarion/bootstrap-ajax)
 
@@ -53,8 +53,10 @@ A starting template for a heroku-compatible Django project.
 ## To Deploy to Heroku
 - First-time Deployments:
 	1. Create the application: `heroku create [APP_NAME]`
-	2. Enable ENV variables during compile: `heroku labs:enable user_env_compile`
+	2. Enable ENV variables during compile: `heroku labs:enable user-env-compile`
 	3. Install the Heroku Add Ons you will be using.
+	4. Setup AWS S3 Account and set variables in `.env.prod` and on heroku.
+	5. Setup CORS access to AWS S3 Bucket to allow proper font rendering in Firefox & IE.
 - Updates
 	1. If needed, push up the local `.env` file: `heroku config:push`
 	2. Push the latest version to heroku: `git push heroku master`
@@ -116,6 +118,23 @@ Given which environment, the project will do the following:
 - CDN Support
 
 
-# External Dependencies
-- Less Compiler
-	- Mac OS X - [Less.app](http://incident57.com/less/)
+# External Dependencies (optional)
+- Homebrew - see `.brew` file for packages
+- Less Compiler - Mac OS X - [Less.app](http://incident57.com/less/)
+
+
+# License Information
+
+	Copyright 2013 Javier Campanini
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.

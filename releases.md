@@ -1,3 +1,15 @@
+# 0.2
+- bugfix: heroku labs - user-env-compile updated
+- `.brew` file added with required brew packages
+- serving MEDIA on DEVELOPMENT environment using `/media/*`
+- added `favicon.ico`
+- added license information
+- upgraded jquery to 1.9.0
+- upgraded font awesome to 3.0.2
+- upgraded bootstrap-datepicker
+- upgraded boostrap-ajax
+
+
 # 0.1.1
 - PEP8 Support
 

@@ -1,0 +1,4 @@
+#! /usr/bin/sh
+brew update
+brew install python
+brew install libmemcached
